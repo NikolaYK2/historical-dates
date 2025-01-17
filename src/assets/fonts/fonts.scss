@@ -1,1 +1,45 @@
+:root {
+  --f-pt: 'PT Sans', sans-serif;
+  --f-bebas: 'Bebas Neue', sans-serif;
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src: local('@/assets/fonts/pt/PTSans-Bold.eot');
+  src: url('@/assets/fonts/pt/PTSans-Bold.eot?#iefix') format('embedded-opentype'),
+  url('@/assets/fonts/pt/PTSans-Bold.woff2') format('woff2'),
+  url('@/assets/fonts/pt/PTSans-Bold.woff') format('woff'),
+  url('@/assets/fonts/pt/PTSans-Bold.ttf') format('truetype'),
+  url('@/assets/fonts/pt/PTSans-Bold.svg#PTSans-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  src: local('@/assets/fonts/pt/PTSans-Regular.eot');
+  src: url('@/assets/fonts/pt/PTSans-Regular.eot?#iefix') format('embedded-opentype'),
+  url('@/assets/fonts/pt/PTSans-Regular.woff2') format('woff2'),
+  url('@/assets/fonts/pt/PTSans-Regular.woff') format('woff'),
+  url('@/assets/fonts/pt/PTSans-Regular.ttf') format('truetype'),
+  url('@/assets/fonts/pt/PTSans-Regular.svg#PTSans-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: local('@/assets/fonts/babes/BebasNeue-Regular.eot');
+  src: url('@/assets/fonts/babes/BebasNeue-Regular.eot?#iefix') format('embedded-opentype'),
+  url('@/assets/fonts/babes/BebasNeue-Regular.woff2') format('woff2'),
+  url('@/assets/fonts/babes/BebasNeue-Regular.woff') format('woff'),
+  url('@/assets/fonts/babes/BebasNeue-Regular.ttf') format('truetype'),
+  url('@/assets/fonts/babes/BebasNeue-Regular.svg#BebasNeue-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 

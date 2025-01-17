@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -15,7 +17,8 @@
     "skipLibCheck": true
   },
   "include": [
-    "src"
+    "src",
+    "global.d.ts"
   ]
 }
 
