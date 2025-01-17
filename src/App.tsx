@@ -1,8 +1,8 @@
 import React from 'react';
-import * as s from './App.module.scss'
+import {Main} from "@/feachers/ui/main/Main";
 
 const App = () => {
-  return <h1 className={s.app}>Привет, Коля! 🚀</h1>;
+  return <Main/>;
 };
 
 export default App;
