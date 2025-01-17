@@ -30,9 +30,12 @@
   position: absolute;
   display: flex;
   align-items: center;
+  margin: min(11.83%, 170px) 0 0 0;
+  top: 0;
   left: 0;
   padding: 0 0 0 min(5.433%, 78px);
   max-width: 353px;
+
   &:before {
     position: absolute;
     left: 0;
