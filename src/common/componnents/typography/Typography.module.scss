@@ -1,0 +1,35 @@
+.h1 {
+  font-family: var(--f-pt), sans-serif;
+  font-weight: var(--f-w-bold);
+  font-size: var(--f-s-56);
+  line-height: var(--l-h-67);
+}
+
+.h2 {
+  font-family: var(--f-pt), sans-serif;
+  font-weight: var(--f-w-bold);
+  font-size: var(--f-s-200);
+  line-height: var(--l-h-160);
+  letter-spacing: -2%;
+}
+
+.h3 {
+  font-family: var(--f-bebas), sans-serif;
+  font-weight: var(--f-w-reg);
+  font-size: var(--f-s-25);
+  line-height: var(--l-h-30);
+}
+
+.pReg {
+  font-family: var(--f-pt), sans-serif;
+  font-weight: var(--f-w-reg);
+  font-size: var(--f-s-20);
+  line-height: var(--l-h-30);
+}
+
+.pBold {
+  font-family: var(--f-pt), sans-serif;
+  font-weight: var(--f-w-bold);
+  font-size: var(--f-s-20);
+  line-height: var(--l-h-30);
+}
