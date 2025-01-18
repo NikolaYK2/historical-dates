@@ -18,10 +18,19 @@
   &:before {
     content: '';
     position: absolute;
-    width: 100%;
     top: 50%;
     left: 0;
+    width: 100%;
     height: 1px;
+    background: var(--c-dark-42-10);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
     background: var(--c-dark-42-10);
   }
 }
