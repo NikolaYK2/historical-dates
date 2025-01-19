@@ -2,11 +2,13 @@ import React from "react";
 import { Typography } from "@/common/componnents/typography/Typography";
 import * as s from "./DateDisplay.module.scss";
 
-const DATE = [2015, 2022];
-export const DateDisplay = () => {
+type Props = {
+  date: string;
+};
+export const DateDisplay = ({ date }: Props) => {
   return (
     <section className={s.dateDisplay}>
-      {DATE.map((date) => (
+      {date.split("-").map((date) => (
         <Typography className={s.date} variant={"h2"}>
           {date}
         </Typography>
