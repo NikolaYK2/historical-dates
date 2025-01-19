@@ -9,7 +9,7 @@ export const DateDisplay = ({ date }: Props) => {
   return (
     <section className={s.dateDisplay}>
       {date.split("-").map((date) => (
-        <Typography className={s.date} variant={"h2"}>
+        <Typography className={s.date} variant={"h2"} key={date}>
           {date}
         </Typography>
       ))}
