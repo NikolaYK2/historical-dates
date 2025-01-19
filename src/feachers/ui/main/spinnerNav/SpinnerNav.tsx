@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as s from "src/feachers/ui/main/spinnerNav/SpinnerNav.module.scss";
+import * as s from "./SpinnerNav.module.scss";
 import { Typography } from "@/common/componnents/typography/Typography";
 import { clsx } from "clsx";
 
