@@ -23,16 +23,13 @@
   align-items: center;
 
   .circulItem {
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
     background: var(--c-dark-42);
     width: 6px;
     height: 6px;
     border: 1px solid var(--c-dark-42);
     border-radius: 50%;
-    //overflow: hidden;
-    .item{
+
+    .item {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -40,7 +37,8 @@
       width: 100%;
       height: 100%;
     }
-    .category{
+
+    .category {
       position: absolute;
       display: flex;
       align-items: center;
@@ -91,5 +89,7 @@
 }
 
 @keyframes circulOpenCategory {
-  100%{opacity: 1}
+  100% {
+    opacity: 1
+  }
 }
