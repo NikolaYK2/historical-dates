@@ -37,7 +37,8 @@
     background: var(--c-light);
     width: 56px;
     height: 56px;
-    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, background 0.3s ease-in-out 0.2s;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out, background 0.3s ease-in-out 0.2s,
+    transform 0.5s ease-in-out;
   }
 
   &:hover {
@@ -49,4 +50,20 @@
 .circul,
 .circulItem {
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.circularNav,
+.circulItem {
+  transition: transform 0.5s ease-in-out;
+}
+
+.circulOpen {
+  width: 56px;
+  height: 56px;
+}
+
+.circulOpen .circulItem {
+  background: var(--c-light);
+  width: 56px;
+  height: 56px;
 }
