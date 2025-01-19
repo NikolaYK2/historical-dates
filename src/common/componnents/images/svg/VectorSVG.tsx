@@ -11,7 +11,7 @@ const Vector = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => {
       ref={ref}
       {...props}
     >
-      <path d="M8.49988 0.750001L2.24988 7L8.49988 13.25" stroke="currentColor" stroke-width="2" />
+      <path d="M8.49988 0.750001L2.24988 7L8.49988 13.25" stroke="currentColor" strokeWidth="2" />
     </svg>
   );
 };
