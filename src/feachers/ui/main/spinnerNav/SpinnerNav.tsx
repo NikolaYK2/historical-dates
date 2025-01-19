@@ -3,23 +3,21 @@ import * as s from "./SpinnerNav.module.scss";
 import { Typography } from "@/common/componnents/typography/Typography";
 import { clsx } from "clsx";
 
-type Button = {
+export type Button = {
   id: number;
-  name: string;
+  range: string;
+  category: string;
 };
-const BUTTON: Button[] = [
-  { id: 1, name: "BUTTON" },
-  { id: 2, name: "BUTTON" },
-  { id: 3, name: "BUTTON" },
-  { id: 4, name: "BUTTON" },
-  { id: 5, name: "BUTTON" },
-  { id: 6, name: "BUTTON" },
-];
-export const SpinnerNav = () => {
+type Props = {
+  item: Button[];
+  setDateDisplay: (value: string) => void;
+};
+export const SpinnerNav = ({ item, setDateDisplay }: Props) => {
   const [activeBtn, setActiveBtn] = useState<number>(6); // Активная кнопка по умолчанию (например, index === 5)
 
-  const handleClickActive = (index: number) => {
-    setActiveBtn(index);
+  const handleClickActive = (id: number, range: string) => {
+    setActiveBtn(id);
+    setDateDisplay(range);
   };
   return (
     <section
@@ -28,14 +26,14 @@ export const SpinnerNav = () => {
         transform: `translate(-50%, -50%) rotate(${-(activeBtn * 60 + 60)}deg)`, // Вращаем секцию так, чтобы активная кнопка оказалась сверху
       }}
     >
-      {BUTTON.map((btn) => (
+      {item.map((btn) => (
         <button
           className={clsx(s.circul, btn.id === activeBtn && s.circulOpen)}
           key={btn.id}
           style={{
             transform: `translate(-50%, -50%) rotate(${btn.id * 60}deg) translateX(265px)`,
           }}
-          onClick={() => handleClickActive(btn.id)}
+          onClick={() => handleClickActive(btn.id, btn.range)}
         >
           <Typography
             className={s.circulItem}
@@ -44,7 +42,8 @@ export const SpinnerNav = () => {
               transform: `rotate(${-(btn.id * 60 - activeBtn * 60 - 60)}deg)`, // Индивидуальная компенсация
             }}
           >
-            {btn.id}
+            <span className={s.item}>{btn.id}</span>
+            {btn.id === activeBtn && <span className={s.category}>{btn.category}</span>}
           </Typography>
         </button>
       ))}
