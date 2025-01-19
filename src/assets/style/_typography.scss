@@ -1,7 +1,7 @@
 @use "sass:math";
 
 @function to-rem($size) {
-  @return math.div($size, 14) * 1rem;
+  @return math.div($size, 16) * 1rem;
 }
 
 :root {
@@ -15,7 +15,7 @@
   --f-s-20: #{clamp(to-rem(14), 5vw, to-rem(20))};
   --f-s-25: #{clamp(to-rem(16), 5vw, to-rem(25))};
   --f-s-56: #{clamp(to-rem(20), 5vw, to-rem(56))};
-  --f-s-200: #{clamp(to-rem(56), 5vw, to-rem(200))};
+  --f-s-200: #{to-rem(200)};
 
   //WEIGHTS ----------------
   --f-w-reg: 400;
