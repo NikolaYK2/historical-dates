@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+
+  .swiper {
+    padding: 0 0 50px;
+  }
+
+  .swiperBlock {
+    cursor: pointer;
+    .year {
+      margin: 0 0 15px;
+      color: var(--c-medium-38);
+    }
+  }
+
+
+  :global(.swiperPrev),
+  :global(.swiperNext) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--c-light);
+    border-radius: 50%;
+    box-shadow: 0 0 5px 0 var(--c-medium-38);
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  :global(.swiperPrev) {
+    left: -52px;
+  }
+
+  :global(.swiperNext) {
+    right: -52px;
+  }
+
+  :global(.swiperDisabled) {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .nextBtn{
+    transform: rotate(180deg);
+  }
+}
+
+
+
