@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as s from "./SpinnerNav.module.scss";
 import { Typography } from "@/common/componnents/typography/Typography";
 import { clsx } from "clsx";
@@ -9,16 +9,22 @@ export type Button = {
   category: string;
 };
 type Props = {
+  spinnerInterval: number;
   item: Button[];
   setDateDisplay: (value: string) => void;
 };
-export const SpinnerNav = ({ item, setDateDisplay }: Props) => {
-  const [activeBtn, setActiveBtn] = useState<number>(6); // Активная кнопка по умолчанию (например, index === 5)
+export const SpinnerNav = ({ item, setDateDisplay, spinnerInterval }: Props) => {
+  const [activeBtn, setActiveBtn] = useState(spinnerInterval); // Активная кнопка по умолчанию (например, index === 5)
 
   const handleClickActive = (id: number, range: string) => {
     setActiveBtn(id);
     setDateDisplay(range);
   };
+
+  useEffect(() => {
+    if (spinnerInterval) setActiveBtn(spinnerInterval);
+  }, [spinnerInterval]);
+
   return (
     <section
       className={s.circularNav}
