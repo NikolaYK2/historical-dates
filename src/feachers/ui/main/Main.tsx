@@ -20,7 +20,7 @@ export const Main = () => {
         <SpinnerNav spinnerInterval={currentIntervalIndex} item={intervals} setDateDisplay={setDateDisplay} />
         <DateDisplay date={dateDisplay} />
 
-        <section>
+        <section className={s.blockItem}>
           <Pagination intervals={currentIntervalIndex} setIndexIntervals={setCurrentIntervalIndex} />
           <Slider slides={dateData[dateDisplay]} />
         </section>

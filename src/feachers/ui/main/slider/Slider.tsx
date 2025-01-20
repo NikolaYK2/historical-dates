@@ -1,6 +1,6 @@
 import React from "react";
 // import Swiper core and required modules
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -20,16 +20,31 @@ export const Slider = ({ slides }: Props) => {
   return (
     <div className={s.container}>
       <Swiper
-        modules={[Navigation]}
-        spaceBetween={40}
-        slidesPerView={3}
+        modules={[Navigation, Pagination]}
+        watchSlidesProgress={true}
+        slideVisibleClass="swiper-slide-visible"
         navigation={{
           prevEl: ".swiperPrev",
           nextEl: ".swiperNext",
           disabledClass: "swiperDisabled",
         }}
+        pagination={{
+          modifierClass: ".swiper-pagination",
+          bulletClass: "bullet",
+          bulletActiveClass: "bulletActive",
+          clickable: true,
+        }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 5,
+          },
+          910: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+        }}
         className={clsx(s.swiper)}
-        pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
       >
         {slides.map((slide) => (

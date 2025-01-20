@@ -1,3 +1,5 @@
+@use "@/assets/style/viewports" as viewports;
+
 .main {
   display: flex;
   justify-content: center;
@@ -9,7 +11,8 @@
 .container {
   position: relative;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 1440px;
   width: 100%;
   height: 100%;
@@ -25,7 +28,11 @@
     width: 100%;
     height: 1px;
     background: var(--c-dark-42-10);
+    @media (max-width: viewports.$viewportTablet) {
+      display: none;
+    }
   }
+
   &:after {
     content: '';
     position: absolute;
@@ -34,11 +41,14 @@
     width: 1px;
     height: 100%;
     background: var(--c-dark-42-10);
+    @media (max-width: viewports.$viewportTablet) {
+      display: none;
+    }
   }
 }
 
 .h1 {
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: center;
   margin: min(11.83%, 170px) 0 0 0;
@@ -46,6 +56,11 @@
   left: 0;
   padding: 0 0 0 min(5.433%, 78px);
   max-width: 353px;
+  @media (max-width: viewports.$viewportMobile) {
+    width: 123px;
+    line-height: 24px !important;
+    padding: 0;
+  }
 
   &:before {
     position: absolute;
@@ -55,5 +70,17 @@
     width: 5px;
     height: 100%;
     background: linear-gradient(var(--c-medium-38) 19%, var(--c-err-EF) 100%);
+    @media (max-width: viewports.$viewportMobile) {
+      display: none;
+    }
+  }
+}
+
+.blockItem {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: viewports.$viewportMobile) {
+    flex-direction: column-reverse;
   }
 }

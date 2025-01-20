@@ -1,12 +1,19 @@
+@use "@/assets/style/viewports" as viewports;
+
 .container {
   position: relative;
 
   .swiper {
-    padding: 0 0 50px;
+    padding: 0 0 3.8%;
   }
 
   .swiperBlock {
     cursor: pointer;
+    @media (max-width: viewports.$viewportMobile) {
+      padding: 20px 0 78px;
+      border-top: 1px solid var(--c-dark-42-20);
+    }
+
     .year {
       margin: 0 0 15px;
       color: var(--c-medium-38);
@@ -27,6 +34,10 @@
     z-index: 100;
     opacity: 1;
     transition: opacity 0.3s ease;
+
+    @media (max-width: viewports.$viewportTablet) {
+      display: none;
+    }
   }
 
   :global(.swiperPrev) {
@@ -42,10 +53,48 @@
     pointer-events: none;
     transition: opacity 0.3s ease;
   }
-  .nextBtn{
+
+  :global(.swiper-pagination) {
+    position: static;
+    bottom: 32px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    @media (min-width: viewports.$viewportTablet) {
+      display: none;
+    }
+
+  }
+
+  :global(.bullet) {
+    display: flex;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    margin: 0 10px 0 0;
+    background: var(--c-dark-42-50);
+  }
+
+  :global(.bulletActive) {
+    background: var(--c-dark-42);
+  }
+
+  :global(.swiper-slide) {
+    opacity: 0.1;
+    transition: opacity 1s ease;
+  }
+
+  :global(.swiper-slide.swiper-slide-visible) {
+    opacity: 1;
+  }
+
+  .nextBtn {
     transform: rotate(180deg);
   }
 }
+
 
 
 

@@ -1,5 +1,12 @@
+@use "@/assets/style/viewports" as viewports;
+
 .container {
   display: block;
+  z-index: 100;
+  @media (max-width: viewports.$viewportMobile) {
+    margin: -35px 0 0 0;
+  }
+
 }
 
 .num {
@@ -32,6 +39,14 @@
     &[disabled] {
       background: var(--c-dark-42-10);
       opacity: 0.3;
+    }
+
+    @media (max-width: viewports.$viewportMobile) {
+      width: 25px;
+      height: 25px;
+      &:first-child {
+        margin: 0 8px 0 0;
+      }
     }
   }
 }
