@@ -1,4 +1,6 @@
-.dateDisplay{
+@use "@/assets/style/viewports" as viewports;
+
+.dateDisplay {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -8,10 +10,24 @@
   max-width: 973px;
   width: 100%;
 
-  .datePart:first-child{
+  .datePart:first-child {
     color: var(--c-medium-5D);
   }
-  .datePart:last-child{
+
+  .datePart:last-child {
     color: var(--c-err-EF);
+  }
+
+
+}
+
+@media (max-width: viewports.$viewportTablet) {
+  .dateDisplay{
+    position: static;
+    width: 100%;
+    transform: none;
+  }
+  .datePart {
+    font-size: 56px;
   }
 }
