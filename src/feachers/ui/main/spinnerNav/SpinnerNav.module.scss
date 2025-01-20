@@ -9,7 +9,7 @@
   border: 1px solid var(--c-dark-42-20);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  z-index: 100;
+  z-index: 101;
   @media (max-width: viewports.$viewportTablet) {
     display: none;
   }
