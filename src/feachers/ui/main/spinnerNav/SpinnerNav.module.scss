@@ -73,13 +73,9 @@
 }
 
 .circul,
-.circulItem {
-  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
-}
-
 .circularNav,
 .circulItem {
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 
 .circulOpen {
