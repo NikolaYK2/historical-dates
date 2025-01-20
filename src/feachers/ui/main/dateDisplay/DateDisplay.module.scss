@@ -8,10 +8,10 @@
   max-width: 973px;
   width: 100%;
 
-  .date:first-child{
+  .datePart:first-child{
     color: var(--c-medium-5D);
   }
-  .date:last-child{
+  .datePart:last-child{
     color: var(--c-err-EF);
   }
 }
