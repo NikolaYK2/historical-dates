@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 // import Swiper core and required modules
 import { Navigation, Pagination } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { gsap } from "gsap";
+
 // Import Swiper styles
 import "swiper/scss";
 import "swiper/scss/pagination";
@@ -17,8 +19,36 @@ type Props = {
   slides: DateDataItem[];
 };
 export const Slider = ({ slides }: Props) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [currentSlides, setCurrentSlides] = useState(slides); // Управляем текущими данными
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      const tl = gsap.timeline();
+
+      // Этап затемнения
+      tl.to(container, {
+        opacity: 0,
+        duration: 0.5, // Длительность затемнения
+        ease: "power2.inOut",
+        onComplete: () => {
+          // Обновление данных после завершения затемнения
+          setCurrentSlides(slides);
+        },
+      });
+
+      // Этап появления
+      tl.to(container, {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.inOut",
+      });
+    }
+  }, [slides]);
+
   return (
-    <div className={s.container}>
+    <div className={s.container} ref={containerRef}>
       <Swiper
         modules={[Navigation, Pagination]}
         watchSlidesProgress={true}
@@ -47,7 +77,7 @@ export const Slider = ({ slides }: Props) => {
         className={clsx(s.swiper)}
         scrollbar={{ draggable: true }}
       >
-        {slides.map((slide) => (
+        {currentSlides.map((slide) => (
           <SwiperSlide className={s.swiperBlock} key={slide.id}>
             <Typography className={s.year} variant={"h3"}>
               {slide.year}
