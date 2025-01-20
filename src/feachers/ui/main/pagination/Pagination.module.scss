@@ -1,0 +1,42 @@
+.container {
+  display: block;
+}
+
+.num {
+  display: block;
+}
+
+.blockBtn {
+  display: flex;
+  margin: 0.94% 0 4.38%;
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--c-dark-42-50);
+    border-radius: 50%;
+    background: var(--c-light);
+    opacity: 1;
+
+    &:first-child {
+      margin: 0 20px 0 0;
+    }
+
+    &:last-child {
+      transform: rotate(180deg);
+    }
+
+    &[disabled] {
+      background: var(--c-dark-42-10);
+      opacity: 0.3;
+    }
+  }
+}
+
+.btn,
+.btn[disabled] {
+  transition: opacity .4s ease;
+}
