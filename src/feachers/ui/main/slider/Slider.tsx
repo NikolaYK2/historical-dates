@@ -9,9 +9,9 @@ import "swiper/scss/pagination";
 import * as s from "./Slider.module.scss";
 
 import { Typography } from "@/common/componnents/typography/Typography";
-import { DateDataItem } from "@/feachers/ui/main/Main";
 import { clsx } from "clsx";
 import { VectorSVG } from "@/common/componnents/images/svg";
+import { DateDataItem } from "@/feachers/lib/useHistoricalData";
 
 type Props = {
   slides: DateDataItem[];
